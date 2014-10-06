@@ -200,8 +200,8 @@ if len( sys.argv ) == 2:
 		drawCross(rect.getXY(), conectPixels)
 
 	del draw
-	connectImage.show()
-	binaryImage.save("%s/boundingbox.jpg" % DIR)
+	# connectImage.show()
+	connectImage.save("%s/boundingbox.jpg" % DIR)
 
 else:
 	print "ERROR: Image path is wrong. Please enter right image as second argument."
