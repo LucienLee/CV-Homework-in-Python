@@ -111,7 +111,7 @@ if len( sys.argv ) == 2:
 		if( notChange ):
 			break
 
-	binaryImage.show()
+	binaryImage.save('%s/thinning.jpg' % DIR)
 
 else:
 	print "ERROR: Image path is wrong. Please enter right image as second argument."
