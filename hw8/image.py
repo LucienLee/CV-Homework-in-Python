@@ -30,7 +30,6 @@ class Kernel(object):
 		return self.points
 
 def dilation( image, kernel ):
-	print "in dila"
 	imageW = image.size[0]
 	imageH = image.size[1]
 	dilationImage = Image.new(image.mode, image.size, 0)
@@ -49,7 +48,6 @@ def dilation( image, kernel ):
 	return dilationImage
 
 def erosion( image, kernel ):
-	print "in ero"
 	imageW = image.size[0]
 	imageH = image.size[1]
 	erosionImage = Image.new(image.mode, image.size, 0)
@@ -213,108 +211,108 @@ if( len( sys.argv ) == 2 ):
 	salt_005_Image = saltAndPepper( im, 0.05 )
 	salt_01_Image = saltAndPepper( im, 0.1 )
 
-	# gaussian_10_Image.save("%s/gaussian_10.jpg" % DIR)
-	# gaussian_30_Image.save("%s/gaussian_30.jpg" % DIR)
-	# salt_005_Image.save("%s/salt_005.jpg" % DIR)
-	# salt_01_Image.save("%s/salt_01.jpg" % DIR)
+	gaussian_10_Image.save("%s/gaussian_10.jpg" % DIR)
+	gaussian_30_Image.save("%s/gaussian_30.jpg" % DIR)
+	salt_005_Image.save("%s/salt_005.jpg" % DIR)
+	salt_01_Image.save("%s/salt_01.jpg" % DIR)
 
 	# box filter 3x3
 
-	# box3x3_gaussian_10 = boxFilter( gaussian_10_Image, 3, 3)
-	# box3x3_gaussian_30 = boxFilter( gaussian_30_Image, 3, 3)
-	# box3x3_salt_005 = boxFilter( salt_005_Image, 3, 3)
-	# box3x3_salt_01 = boxFilter( salt_01_Image, 3, 3)
+	box3x3_gaussian_10 = boxFilter( gaussian_10_Image, 3, 3)
+	box3x3_gaussian_30 = boxFilter( gaussian_30_Image, 3, 3)
+	box3x3_salt_005 = boxFilter( salt_005_Image, 3, 3)
+	box3x3_salt_01 = boxFilter( salt_01_Image, 3, 3)
 
-	# box3x3_gaussian_10.save("%s/box3x3_gaussian_10.jpg" % DIR)
-	# box3x3_gaussian_30.save("%s/box3x3_gaussian_30.jpg" % DIR)
-	# box3x3_salt_005.save("%s/box3x3_salt_005.jpg" % DIR)
-	# box3x3_salt_01.save("%s/box3x3_salt_01.jpg" % DIR)
+	box3x3_gaussian_10.save("%s/box3x3_gaussian_10.jpg" % DIR)
+	box3x3_gaussian_30.save("%s/box3x3_gaussian_30.jpg" % DIR)
+	box3x3_salt_005.save("%s/box3x3_salt_005.jpg" % DIR)
+	box3x3_salt_01.save("%s/box3x3_salt_01.jpg" % DIR)
 
-	# file.write( "box3x3_gaussian_10: "+ str(SNR(im, box3x3_gaussian_10)) + '\n' )
-	# file.write( "box3x3_gaussian_30: "+ str(SNR(im, box3x3_gaussian_30)) + '\n' )
-	# file.write( "box3x3_salt_005: "+ str(SNR(im, box3x3_salt_005)) + '\n' )
-	# file.write( "box3x3_salt_01: "+ str(SNR(im, box3x3_salt_01)) + '\n' )
+	file.write( "box3x3_gaussian_10: "+ str(SNR(im, box3x3_gaussian_10)) + '\n' )
+	file.write( "box3x3_gaussian_30: "+ str(SNR(im, box3x3_gaussian_30)) + '\n' )
+	file.write( "box3x3_salt_005: "+ str(SNR(im, box3x3_salt_005)) + '\n' )
+	file.write( "box3x3_salt_01: "+ str(SNR(im, box3x3_salt_01)) + '\n' )
 
 	# box filter 5x5
 
-	# box5x5_gaussian_10 = boxFilter( gaussian_10_Image, 5, 5)
-	# box5x5_gaussian_30 = boxFilter( gaussian_30_Image, 5, 5)
-	# box5x5_salt_005 = boxFilter( salt_005_Image, 5, 5)
+	box5x5_gaussian_10 = boxFilter( gaussian_10_Image, 5, 5)
+	box5x5_gaussian_30 = boxFilter( gaussian_30_Image, 5, 5)
+	box5x5_salt_005 = boxFilter( salt_005_Image, 5, 5)
 	box5x5_salt_01 = boxFilter( salt_01_Image, 5, 5)
 
-	# box5x5_gaussian_10.save("%s/box5x5_gaussian_10.jpg" % DIR)
-	# box5x5_gaussian_30.save("%s/box5x5_gaussian_30.jpg" % DIR)
-	# box5x5_salt_005.save("%s/box5x5_salt_005.jpg" % DIR)
+	box5x5_gaussian_10.save("%s/box5x5_gaussian_10.jpg" % DIR)
+	box5x5_gaussian_30.save("%s/box5x5_gaussian_30.jpg" % DIR)
+	box5x5_salt_005.save("%s/box5x5_salt_005.jpg" % DIR)
 	box5x5_salt_01.save("%s/box5x5_salt_01.jpg" % DIR)
 
-	# file.write( "box5x5_gaussian_10: "+ str(SNR(im, box5x5_gaussian_10)) + '\n' )
-	# file.write( "box5x5_gaussian_30: "+ str(SNR(im, box5x5_gaussian_30)) + '\n' )
-	# file.write( "box5x5_salt_005: "+ str(SNR(im, box5x5_salt_005)) + '\n' )
+	file.write( "box5x5_gaussian_10: "+ str(SNR(im, box5x5_gaussian_10)) + '\n' )
+	file.write( "box5x5_gaussian_30: "+ str(SNR(im, box5x5_gaussian_30)) + '\n' )
+	file.write( "box5x5_salt_005: "+ str(SNR(im, box5x5_salt_005)) + '\n' )
 	file.write( "box5x5_salt_01: "+ str(SNR(im, box5x5_salt_01)) + '\n' )
 
 	# median filter 3x3
 
-	# median3x3_gaussian_10 = medianFilter( gaussian_10_Image, 3, 3)
-	# median3x3_gaussian_30 = medianFilter( gaussian_30_Image, 3, 3)
-	# median3x3_salt_005 = medianFilter(salt_005_Image, 3, 3)
+	median3x3_gaussian_10 = medianFilter( gaussian_10_Image, 3, 3)
+	median3x3_gaussian_30 = medianFilter( gaussian_30_Image, 3, 3)
+	median3x3_salt_005 = medianFilter(salt_005_Image, 3, 3)
 	median3x3_salt_01 = medianFilter(salt_01_Image, 3, 3)
 
-	# median3x3_gaussian_10.save("%s/median3x3_gaussian_10.jpg" % DIR)
-	# median3x3_gaussian_30.save("%s/median3x3_gaussian_30.jpg" % DIR)
-	# median3x3_salt_005.save("%s/median3x3_salt_005.jpg" % DIR)
+	median3x3_gaussian_10.save("%s/median3x3_gaussian_10.jpg" % DIR)
+	median3x3_gaussian_30.save("%s/median3x3_gaussian_30.jpg" % DIR)
+	median3x3_salt_005.save("%s/median3x3_salt_005.jpg" % DIR)
 	median3x3_salt_01.save("%s/median3x3_salt_01.jpg" % DIR)
 
-	# file.write( "median3x3_gaussian_10: "+ str(SNR(im, median3x3_gaussian_10)) + '\n' )
-	# file.write( "median3x3_gaussian_30: "+ str(SNR(im, median3x3_gaussian_30)) + '\n' )
-	# file.write( "median3x3_salt_005: "+ str(SNR(im, median3x3_salt_005)) + '\n' )
-	# file.write( "median3x3_salt_01: "+ str(SNR(im, median3x3_salt_01)) + '\n' )
+	file.write( "median3x3_gaussian_10: "+ str(SNR(im, median3x3_gaussian_10)) + '\n' )
+	file.write( "median3x3_gaussian_30: "+ str(SNR(im, median3x3_gaussian_30)) + '\n' )
+	file.write( "median3x3_salt_005: "+ str(SNR(im, median3x3_salt_005)) + '\n' )
+	file.write( "median3x3_salt_01: "+ str(SNR(im, median3x3_salt_01)) + '\n' )
 
 	# median filter 5x5
 
-	# median5x5_gaussian_10 = medianFilter( gaussian_10_Image, 5, 5)
-	# median5x5_gaussian_30 = medianFilter( gaussian_30_Image, 5, 5)
-	# median5x5_salt_005 = medianFilter(salt_005_Image, 5, 5)
+	median5x5_gaussian_10 = medianFilter( gaussian_10_Image, 5, 5)
+	median5x5_gaussian_30 = medianFilter( gaussian_30_Image, 5, 5)
+	median5x5_salt_005 = medianFilter(salt_005_Image, 5, 5)
 	median5x5_salt_01 = medianFilter(salt_01_Image, 5, 5)
 
-	# median5x5_gaussian_10.save("%s/median5x5_gaussian_10.jpg" % DIR)
-	# median5x5_gaussian_30.save("%s/median5x5_gaussian_30.jpg" % DIR)
-	# median5x5_salt_005.save("%s/median5x5_salt_005.jpg" % DIR)
+	median5x5_gaussian_10.save("%s/median5x5_gaussian_10.jpg" % DIR)
+	median5x5_gaussian_30.save("%s/median5x5_gaussian_30.jpg" % DIR)
+	median5x5_salt_005.save("%s/median5x5_salt_005.jpg" % DIR)
 	median5x5_salt_01.save("%s/median5x5_salt_01.jpg" % DIR)
 
-	# file.write( "median5x5_gaussian_10: "+ str(SNR(im, median5x5_gaussian_10)) + '\n' )
-	# file.write( "median5x5_gaussian_30: "+ str(SNR(im, median5x5_gaussian_30)) + '\n' )
-	# file.write( "median5x5_salt_005: "+ str(SNR(im, median5x5_salt_005)) + '\n' )
+	file.write( "median5x5_gaussian_10: "+ str(SNR(im, median5x5_gaussian_10)) + '\n' )
+	file.write( "median5x5_gaussian_30: "+ str(SNR(im, median5x5_gaussian_30)) + '\n' )
+	file.write( "median5x5_salt_005: "+ str(SNR(im, median5x5_salt_005)) + '\n' )
 	file.write( "median5x5_salt_01: "+ str(SNR(im, median5x5_salt_01)) + '\n' )
 
-	# closingThenOpening_gaussian_10 = closingThenOpening( gaussian_10_Image, octogonKernel)
-	# closingThenOpening_gaussian_30 = closingThenOpening( gaussian_30_Image, octogonKernel)
-	# closingThenOpening_salt_005 = closingThenOpening( salt_005_Image, octogonKernel)
-	# closingThenOpening_salt_01 = closingThenOpening( salt_01_Image, octogonKernel)
+	closingThenOpening_gaussian_10 = closingThenOpening( gaussian_10_Image, octogonKernel)
+	closingThenOpening_gaussian_30 = closingThenOpening( gaussian_30_Image, octogonKernel)
+	closingThenOpening_salt_005 = closingThenOpening( salt_005_Image, octogonKernel)
+	closingThenOpening_salt_01 = closingThenOpening( salt_01_Image, octogonKernel)
 
-	# closingThenOpening_gaussian_10.save("%s/closingThenOpening_gaussian_10.jpg" % DIR)
-	# closingThenOpening_gaussian_30.save("%s/closingThenOpening_gaussian_30.jpg" % DIR)
-	# closingThenOpening_salt_005.save("%s/closingThenOpening_salt_005.jpg" % DIR)
-	# closingThenOpening_salt_01.save("%s/closingThenOpening_salt_01.jpg" % DIR)
+	closingThenOpening_gaussian_10.save("%s/closingThenOpening_gaussian_10.jpg" % DIR)
+	closingThenOpening_gaussian_30.save("%s/closingThenOpening_gaussian_30.jpg" % DIR)
+	closingThenOpening_salt_005.save("%s/closingThenOpening_salt_005.jpg" % DIR)
+	closingThenOpening_salt_01.save("%s/closingThenOpening_salt_01.jpg" % DIR)
 
-	# file.write( "closingThenOpening_gaussian_10: "+ str(SNR(im, closingThenOpening_gaussian_10)) + '\n' )
-	# file.write( "closingThenOpening_gaussian_30: "+ str(SNR(im, closingThenOpening_gaussian_30)) + '\n' )
-	# file.write( "closingThenOpening_salt_005: "+ str(SNR(im, closingThenOpening_salt_005)) + '\n' )
-	# file.write( "closingThenOpening_salt_01: "+ str(SNR(im, closingThenOpening_salt_01)) + '\n' )
+	file.write( "closingThenOpening_gaussian_10: "+ str(SNR(im, closingThenOpening_gaussian_10)) + '\n' )
+	file.write( "closingThenOpening_gaussian_30: "+ str(SNR(im, closingThenOpening_gaussian_30)) + '\n' )
+	file.write( "closingThenOpening_salt_005: "+ str(SNR(im, closingThenOpening_salt_005)) + '\n' )
+	file.write( "closingThenOpening_salt_01: "+ str(SNR(im, closingThenOpening_salt_01)) + '\n' )
 
-	# openingThenClosing_gaussian_10 = openingThenClosing( gaussian_10_Image, octogonKernel)
-	# openingThenClosing_gaussian_30 = openingThenClosing( gaussian_30_Image, octogonKernel)
-	# openingThenClosing_salt_005 = openingThenClosing( salt_005_Image, octogonKernel)
-	# openingThenClosing_salt_01 = openingThenClosing( salt_01_Image, octogonKernel)
+	openingThenClosing_gaussian_10 = openingThenClosing( gaussian_10_Image, octogonKernel)
+	openingThenClosing_gaussian_30 = openingThenClosing( gaussian_30_Image, octogonKernel)
+	openingThenClosing_salt_005 = openingThenClosing( salt_005_Image, octogonKernel)
+	openingThenClosing_salt_01 = openingThenClosing( salt_01_Image, octogonKernel)
 
-	# openingThenClosing_gaussian_10.save("%s/openingThenClosing_gaussian_10.jpg" % DIR)
-	# openingThenClosing_gaussian_30.save("%s/openingThenClosing_gaussian_30.jpg" % DIR)
-	# openingThenClosing_salt_005.save("%s/openingThenClosing_salt_005.jpg" % DIR)
-	# openingThenClosing_salt_01.save("%s/openingThenClosing_salt_01.jpg" % DIR)
+	openingThenClosing_gaussian_10.save("%s/openingThenClosing_gaussian_10.jpg" % DIR)
+	openingThenClosing_gaussian_30.save("%s/openingThenClosing_gaussian_30.jpg" % DIR)
+	openingThenClosing_salt_005.save("%s/openingThenClosing_salt_005.jpg" % DIR)
+	openingThenClosing_salt_01.save("%s/openingThenClosing_salt_01.jpg" % DIR)
 
-	# file.write( "openingThenClosing_gaussian_10: "+ str(SNR(im, openingThenClosing_gaussian_10)) + '\n' )
-	# file.write( "openingThenClosing_gaussian_30: "+ str(SNR(im, openingThenClosing_gaussian_30)) + '\n' )
-	# file.write( "openingThenClosing_salt_005: "+ str(SNR(im, openingThenClosing_salt_005)) + '\n' )
-	# file.write( "openingThenClosing_salt_01: "+ str(SNR(im, openingThenClosing_salt_01)) + '\n' )
+	file.write( "openingThenClosing_gaussian_10: "+ str(SNR(im, openingThenClosing_gaussian_10)) + '\n' )
+	file.write( "openingThenClosing_gaussian_30: "+ str(SNR(im, openingThenClosing_gaussian_30)) + '\n' )
+	file.write( "openingThenClosing_salt_005: "+ str(SNR(im, openingThenClosing_salt_005)) + '\n' )
+	file.write( "openingThenClosing_salt_01: "+ str(SNR(im, openingThenClosing_salt_01)) + '\n' )
 
 	file.close()
 
